@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie 2</title>
+</head>
+    <body>
+        <script>
+            function nie(n){
+                if(n < 2){
+                    return n;
+                } 
+                let f = (1 + Math.sqrt(5)) / 2;
+
+                return Math.round((f**n-(f-1)**n) * Math.sqrt(5)/5);
+            }
+            for(i = 0; i < 30; i++){
+                console.log(nie(i));
+            } 
+        </script>
+    </body>
+</html>
