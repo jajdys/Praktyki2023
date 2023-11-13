@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram</title>
+</head>
+    <body>
+
+        <form id="anagramForm">
+            <label for="word1">Słowo 1:</label>
+            <input type="text" id="word1" required><br><br>
+            
+            <label for="word2">Słowo 2:</label>
+            <input type="text" id="word2" required><br><br>
+
+            <button type="button" onclick="checkAnagram()">Sprawdź</button>
+        </form>
+
+        <p id="result"></p>
+
+        <script>
+            function checkAnagram() {
+                const word1 = document.getElementById('word1').value.toLowerCase();
+                const word2 = document.getElementById('word2').value.toLowerCase();
+
+                const isAnagram = areAnagrams(word1, word2);
+
+                const resultElement = document.getElementById('result');
+
+                resultElement.textContent = isAnagram ? 'Anagram!' : 'Nie Anagram.';
+            }
+
+            function areAnagrams(word1, word2) {
+                const arr1 = word1.split('');
+                const arr2 = word2.split('');
+
+                const sortedArr1 = arr1.sort();
+                const sortedArr2 = arr2.sort();
+
+                return JSON.stringify(sortedArr1) === JSON.stringify(sortedArr2);
+            }
+        </script>
+    </body>
+</html>

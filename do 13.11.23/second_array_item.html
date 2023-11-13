@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Element Finder</title>
+</head>
+    <body>
+
+        <form id="myForm">
+            <label for="inputArray">Podaj tablicę (oddziel elementy przecinkiem):</label>
+            <input type="text" id="inputArray" name="inputArray" required>
+            <input type="submit" value="Znajdź drugi element">
+        </form>
+
+        <script>
+            document.getElementById('myForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const inputValue = document.getElementById('inputArray').value;
+                const inputArray = inputValue.split(',').map(item => item.trim());
+                const secondElement = findSecondElement(inputArray);
+
+                alert('Drugi element: ' + secondElement);
+            });
+
+            function findSecondElement(array) {
+                if (array.every(item => !isNaN(item))) {
+                    const uniqueNumbers = Array.from(new Set(array.map(Number)));
+                    const sortedNumbers = uniqueNumbers.sort((a, b) => b - a);
+                    return sortedNumbers[1];
+                } 
+                else {
+                    const sortedStrings = array.sort((a, b) => b.length - a.length);
+                    return sortedStrings[1];
+                }
+            }
+        </script>
+    </body>
+</html>
