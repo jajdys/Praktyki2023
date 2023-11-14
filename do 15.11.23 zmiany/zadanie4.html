@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <script>
+            const oblicz = () => {
+                var arr1 = [10, 11, "Hania", 11];
+                var finish = [];
+                for (let i = 0; i < arr1.length; i++) {
+                    if (typeof(arr1[i]) === "number" && arr1[i] === 11) {
+                        finish.push(arr1[i]);
+                    }
+                }
+                console.log(finish);
+            }
+            oblicz();
+        </script>
+    </body>
+</html>
