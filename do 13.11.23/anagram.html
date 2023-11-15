@@ -6,7 +6,6 @@
     <title>Anagram</title>
 </head>
     <body>
-
         <form id="anagramForm">
             <label for="word1">Słowo 1:</label>
             <input type="text" id="word1" required><br><br>
@@ -16,7 +15,6 @@
 
             <button type="button" onclick="checkAnagram()">Sprawdź</button>
         </form>
-
         <p id="result"></p>
 
         <script>
@@ -30,7 +28,6 @@
 
                 resultElement.textContent = isAnagram ? 'Anagram!' : 'Nie Anagram.';
             }
-
             function areAnagrams(word1, word2) {
                 const arr1 = word1.split('');
                 const arr2 = word2.split('');
