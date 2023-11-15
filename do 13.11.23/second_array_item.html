@@ -6,7 +6,6 @@
     <title>Second Element Finder</title>
 </head>
     <body>
-
         <form id="myForm">
             <label for="inputArray">Podaj tablicę (oddziel elementy przecinkiem):</label>
             <input type="text" id="inputArray" name="inputArray" required>
@@ -23,7 +22,6 @@
 
                 alert('Drugi element: ' + secondElement);
             });
-
             function findSecondElement(array) {
                 if (array.every(item => !isNaN(item))) {
                     const uniqueNumbers = Array.from(new Set(array.map(Number)));
