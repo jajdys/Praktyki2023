@@ -6,30 +6,31 @@
 </head>
     <body>
         <script>
-       const tab1 = ["Anna", "Maria"];
-       const tab2 = ["Adam", "Marek", "Bartek", "Tomek"];
+       const arr1 = ["Anna", "Maria"];
+       const arr2 = ["Adam", "Marek", "Bartek", "Tomek"];
        const liczby = [1, 2, 3, 4, 5];
 
       // 1.
-      const laczenie = tab1.concat(tab2);
-      console.log("1. Łączenie tablic tab1 oraz tab2:", laczenie);
+      const laczenie = arr1.concat(arr2);
+      console.log("1. Łączenie tablic arr1 oraz arr2:", laczenie);
 
       // 2. 
-      const ostatni = [...laczenie].reverse()[0] || "Tablica jest pusta";
-      console.log("2. Ostatni element w tablicy:", ostatni);
+      const last = [...laczenie].reverse()[0] || "Tablica jest pusta";
+      console.log("2. last element w tablicy:", last);
 
       // 3. 
-      const filterArray = (array, arg) => array.filter(item => item.includes(arg));
-      const filtrowana2 = filterArray(tab2, "a");
-      console.log("3. Filter w tablicy tab2:", filtrowana2);
+      const Filtr_arr = (array, arg) => array.filter(item => item.includes(arg));
+      const filtr = Filtr_arr(arr2, "a");
+      console.log("3. Filter w tablicy arr2:", filtr);
 
       // 4. 
-      const suma = liczby.reduce((acc, num) => acc + num, 0);
-      console.log("4. Suma elementów w tablicy liczby:", suma);
+      const all = liczby.reduce((acc, num) => acc + num, 0);
+      console.log("4. suma elementów w tablicy liczby:", all);
 
       // 5. 
-      const mapowane = liczby.map(num => num ** 2 + 3);
-      console.log("5. .map() po tablicy liczby:", mapowane);
+      const mapa = liczby.map(num => num ** 2 + 3);
+      console.log("5. .map() po tablicy liczby:", mapa);
+
         </script>
     </body>
-</html>
+</html>
