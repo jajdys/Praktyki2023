@@ -6,54 +6,30 @@
 </head>
     <body>
         <script>
-            const arr1 = ["Anna", "Maria"];
-            const arr2 = ["Adam", "Marek", "Bartek", "Tomek"];
-            const num = [1, 2, 3, 4, 5];
+       const tab1 = ["Anna", "Maria"];
+       const tab2 = ["Adam", "Marek", "Bartek", "Tomek"];
+       const liczby = [1, 2, 3, 4, 5];
 
-            // zadanie 1 po zmianiach
-            const connect = [...arr1, ...arr2];
-            console.log("zad 1. Łączenie arr1 oraz arr2:", connect);
+      // 1.
+      const laczenie = tab1.concat(tab2);
+      console.log("1. Łączenie tablic tab1 oraz tab2:", laczenie);
 
-            // zadanie 2 po zmianiach
-            let last;
+      // 2. 
+      const ostatni = [...laczenie].reverse()[0] || "Tablica jest pusta";
+      console.log("2. Ostatni element w tablicy:", ostatni);
 
-            if (connect.length > 0) {
-                last = connect[connect.length - 1];
-            } 
-            else {
-                last = "Puste";
-            }
-            console.log("zad 2. Ostatni element w tablicy:", last);
+      // 3. 
+      const filterArray = (array, arg) => array.filter(item => item.includes(arg));
+      const filtrowana2 = filterArray(tab2, "a");
+      console.log("3. Filter w tablicy tab2:", filtrowana2);
 
-            // zadanie 3 po zmianiach
-            const Filtr_arr = (arr3, arg) => {
-                const filter = [];
+      // 4. 
+      const suma = liczby.reduce((acc, num) => acc + num, 0);
+      console.log("4. Suma elementów w tablicy liczby:", suma);
 
-                for (let i = 0; i < arr3.length; i++) {
-                    if (arr3[i].includes(arg)) {
-                        filter.push(arr3[i]);
-                    }
-                }
-                return filter;
-            };
-            const filter2 = Filtr_arr(arr2, "a");
-            console.log("zad 3. Filter w tablicy tablica:", filter2);
-
-            // zadanie 4 po zmianiach
-            let suma = 0;
-
-            for (let i = 0; i < num.length; i++) {
-                suma += num[i];
-            }
-            console.log("zad 4. Suma elementów w tablicy liczby:", suma);
-
-            // zadanie 5 po zmianiach
-            const map = [];
-
-            for (let i = 0; i < num.length; i++) {
-                map.push(num[i] ** 2 + 3);
-            }
-            console.log("zad 5. .map() po tablicy liczby:", map);
+      // 5. 
+      const mapowane = liczby.map(num => num ** 2 + 3);
+      console.log("5. .map() po tablicy liczby:", mapowane);
         </script>
     </body>
-</html>
+</html>
