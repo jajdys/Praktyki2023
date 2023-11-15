@@ -12,25 +12,24 @@
 
       // 1.
       const laczenie = arr1.concat(arr2);
-      console.log("1. Łączenie tablic arr1 oraz arr2:", laczenie);
+          console.log("1. Łączenie tablic arr1 oraz arr2:", laczenie);
 
       // 2. 
       const last = [...laczenie].reverse()[0] || "Tablica jest pusta";
-      console.log("2. last element w tablicy:", last);
+          console.log("2. last element w tablicy:", last);
 
       // 3. 
       const Filtr_arr = (array, arg) => array.filter(item => item.includes(arg));
       const filtr = Filtr_arr(arr2, "a");
-      console.log("3. Filter w tablicy arr2:", filtr);
+          console.log("3. Filter w tablicy arr2:", filtr);
 
       // 4. 
       const all = liczby.reduce((acc, num) => acc + num, 0);
-      console.log("4. suma elementów w tablicy liczby:", all);
+          console.log("4. suma elementów w tablicy liczby:", all);
 
       // 5. 
       const mapa = liczby.map(num => num ** 2 + 3);
-      console.log("5. .map() po tablicy liczby:", mapa);
-
+          console.log("5. .map() po tablicy liczby:", mapa);
         </script>
     </body>
 </html>
