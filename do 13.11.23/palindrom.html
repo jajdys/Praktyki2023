@@ -12,7 +12,6 @@
 
             <button type="submit">Sprawdź</button>
         </form>
-
         <script>
             function isPalindrome(str) {
                 const cleanStr = str.toLowerCase().replace(/[^a-z]/g, ''); // zamienia duże na małe
@@ -20,7 +19,6 @@
                 const reversedStr = cleanStr.split('').reverse().join(''); // odwracanie słów i porównywanie ich ze sobą
                 return cleanStr === reversedStr;
             }
-
             document.getElementById('palindromeForm').addEventListener('submit', function (event){
                 event.preventDefault();
 
