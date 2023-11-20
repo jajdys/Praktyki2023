@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <form>
+            <input type="text" id="one" placeholder="Add first number"> <br><br>
+            <input type="text" id="two" placeholder="Add second number"> <br><br>
+            <input type="button" onclick="find_me()" value="Click me">
+          </form>
+        <script>
+            const find_me = () => {
+                const multiplyAsync = (x,y) => {
+                    return new Promise((resolve, reject) => {
+                        typeof(parseFloat(x)) != 'number' || typeof(parseFloat(y)) != 'number'|| isNaN(parseFloat(x)) || isNaN(parseFloat(y))
+                        ? reject('jedna ze zmiennych nie jest liczbą') 
+                        : resolve(parseFloat(x) * parseFloat(y))
+                    })
+                }
+                
+                multiplyAsync(document.getElementById('one').value, document.getElementById('two').value)
+                .then((result) =>console.log(result))
+                .catch((error) => console.log('Error: ' + error));
+            };
+        </script>
+    </body>
+</html>
