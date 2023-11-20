@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <script>
+            // Importujemy moduł 'axios' do wykonywania żądań HTTP
+                const axios = require('axios');
+
+                // URL do zasobu JSON
+                const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+                // Wywołujemy funkcję 'get' z modułu 'axios' dla podanego URL
+                axios.get(apiUrl)
+                .then((response) => {
+                    if (response.status === 200) {
+                        console.log(response);
+                        return response.data;
+                    } 
+                    else {
+                    
+                    console.error('Błąd: Niepoprawny status odpowiedzi');
+                    }
+                })
+                .then((postData) => {
+                    // Destrukturyzacja obiektów do wypisania 'title' i 'body' dla każdego posta
+                    postData.forEach(({ title, body }) => {
+                    console.log('Tytuł:', title);
+                    console.log('Treść:', body);
+                    console.log('---');
+                    });
+                })
+                .catch((error) => {
+                    // Obsługa błędów ogólna - wypisujemy błąd w konsoli
+                    console.error('Błąd:', error.message);
+                });
+
+        </script>
+    </body>
+</html>
